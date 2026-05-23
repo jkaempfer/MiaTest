@@ -423,34 +423,64 @@ body {
 .week-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 10px;
-  margin-bottom: 16px;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.calendar-header-day {
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--card-border);
+  margin-bottom: 8px;
 }
 
 .day-circle {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  justify-content: center;
+  gap: 2px;
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid var(--card-border);
-  padding: 12px 6px;
-  border-radius: 12px;
+  padding: 8px 4px;
+  border-radius: 10px;
   transition: var(--transition-normal);
+  aspect-ratio: 1 / 1;
+}
+
+.day-circle.empty-slot {
+  background: transparent;
+  border-color: transparent;
+  pointer-events: none;
 }
 
 .day-circle.today {
   border-color: var(--primary);
-  background: rgba(99, 102, 241, 0.05);
+  background: rgba(99, 102, 241, 0.08);
+  box-shadow: 0 0 10px rgba(99, 102, 241, 0.2);
 }
 
 .day-circle.completed {
   border-color: var(--success);
-  background: rgba(16, 185, 129, 0.08);
+  background: rgba(16, 185, 129, 0.1);
+}
+
+.day-circle.missed {
+  border-color: var(--error);
+  background: rgba(239, 68, 68, 0.05);
 }
 
 .day-circle.completed .day-status {
   color: var(--success);
+}
+
+.day-circle.missed .day-status {
+  color: var(--error);
 }
 
 .day-label {
@@ -462,7 +492,7 @@ body {
 }
 
 .day-status {
-  font-size: 1.2rem;
+  font-size: 0.8rem;
   color: var(--text-muted);
 }
 
@@ -478,6 +508,7 @@ body {
   font-size: 0.75rem;
   color: var(--text-secondary);
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .legend-item {
@@ -495,6 +526,7 @@ body {
 
 .dot-completed { background: var(--success); }
 .dot-today { background: var(--primary); }
+.dot-missed { background: var(--error); }
 .dot-locked { background: var(--text-muted); }
 
 /* SCREEN 2: PERFORMANCE & ANALYTICS */
