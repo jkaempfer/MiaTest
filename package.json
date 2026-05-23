@@ -4,7 +4,7 @@
   "description": "Daily training web application for the CPS selective high schools admission test.",
   "main": "app.js",
   "scripts": {
-    "dev": "wrangler pages dev . --kv=PROGRESS_KV",
+    "dev": "wrangler pages dev public/ --kv=PROGRESS_KV",
     "build": "echo 'No build step required'"
   },
   "keywords": [],
