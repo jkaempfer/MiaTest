@@ -1,0 +1,15 @@
+{
+  "name": "mia-cps-hsat-prep",
+  "version": "1.0.0",
+  "description": "Daily training web application for the CPS selective high schools admission test.",
+  "main": "app.js",
+  "scripts": {
+    "dev": "wrangler pages dev . --kv=PROGRESS_KV"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "wrangler": "^3.55.0"
+  }
+}

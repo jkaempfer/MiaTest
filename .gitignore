@@ -1,0 +1,10 @@
+# Dependencies
+node_modules/
+
+# Cloudflare Wrangler local simulations
+.wrangler/
+
+# Local logs & configurations
+*.log
+.system_generated/
+.gemini/
